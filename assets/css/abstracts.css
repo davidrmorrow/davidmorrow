@@ -1,0 +1,34 @@
+/* ABSTRACT overflow CSS */
+
+	button.expand-abstract {
+		font-size: 50%;
+		color: white;
+		border: none;
+		cursor: pointer;
+		margin: 2ex 1em 3ex 0;
+		float: right;
+	}
+	
+	button.expand-abstract.hidden {
+		display: none;
+	}
+
+	.selected-papers .paper-info {
+		position: relative; /* Ensure the button stays inside the section */
+		transition: height 0.5s ease;
+	}
+	
+	.selected-papers .paper-info.collapsed {
+		height: 90ex; /* Adjust this value to your desired height */
+		overflow: hidden;
+	}
+	
+	.selected-papers .paper-info.collapsed:after {
+		content: '';
+		position: absolute;
+		bottom: 0; /* Slightly above the button */
+		left: 0;
+		width: 100%;
+		height: 50px;
+		background: linear-gradient(to bottom, transparent, white); /* Fade effect */
+	}
